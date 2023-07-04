@@ -15,6 +15,11 @@ public class Customer {
 
     private Clothing[] itens;
 
+    public Customer(String name, int measurement) {
+        this.name = name;
+        setSize(measurement);
+    }
+
     public void addItens(Clothing[] someItens) {
         itens = someItens;
     }
@@ -24,12 +29,12 @@ public class Customer {
     }
 
     public double getTotalClouthingCost() {
-        
+
         double total = 0.0;
-        
+
         for (Clothing item : itens) {
             //if (c1.getSize().equals(item.getSize())) {
-                total = +item.getPrice();
+            total = +item.getPrice();
         }
         return total;
     }
