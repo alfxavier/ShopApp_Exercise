@@ -20,12 +20,12 @@ public class ShopApp {
 
         System.out.println("Wecome to Duke Shop");
 
-        Customer c1 = new Customer("Pink", 1);
+        Customer c1 = new Customer("Pink", 14);
 
         //c1.setName("Pink");
         //c1.setSize();
         //c1.setSize(measurement);
-        System.out.println("Customer is " + c1.getName() + " " + c1.getSize());
+        System.out.println("Min Price "+ Clothing.MIN_PRICE);
 
         //Exercise 3-2
         Clothing item1 = new Clothing("Blue Jacket", 20.9, "M");
@@ -40,10 +40,34 @@ public class ShopApp {
         c1.addItens(itens);
 
         //System.out.println("Item " + item.getDescription() + "," + item.getPrice() + "," + item.getSize()+","+c1.getTotalClouthingCost());
+        
+        System.out.println("Customer is " + c1.getName() + ", " + c1.getSize()+", "+c1.getTotalClouthingCost());
+      
+       
         for (Clothing item : c1.getItens()) {
             System.out.println("Itens " + item.getDescription());
 
         }
+        // Practice 
+        
+        int average = 0;
+        int count = 0;
+        
+        for (Clothing item : c1.getItens()){
+            if (item.getSize().equals("L")){
+                count++;
+                average += item.getPrice();
+                
+            }
+        }
+        
+        try {
+            average = average / count;
+            System.out.println("Average Price "+average+", Count "+ count);
+        }catch (ArithmeticException e){
+            System.out.println("Don't divide by 0");
+        }
+        
     }
 
 }
