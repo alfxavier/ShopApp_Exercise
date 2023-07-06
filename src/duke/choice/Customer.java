@@ -13,26 +13,26 @@ public class Customer {
     private String name;
     private String size;
 
-    private Clothing[] itens;
+    private Clothing[] items;
 
     public Customer(String name, int measurement) {
         this.name = name;
         setSize(measurement);
     }
 
-    public void addItens(Clothing[] someItens) {
-        itens = someItens;
+    public void addItems(Clothing[] someItems) {
+        items = someItems;
     }
 
-    public Clothing[] getItens() {
-        return itens;
+    public Clothing[] getItems() {
+        return items;
     }
 
     public double getTotalClouthingCost() {
 
         double total = 0.0;
 
-        for (Clothing item : itens) {
+        for (Clothing item : items) {
             //if (c1.getSize().equals(item.getSize())) {
             total = +item.getPrice();
         }
