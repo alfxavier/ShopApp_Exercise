@@ -4,6 +4,8 @@
  */
 package duke.choice;
 
+import java.util.Arrays;
+
 /**
  *
  * @author opc
@@ -66,6 +68,12 @@ public class ShopApp {
             System.out.println("Average Price "+average+", Count "+ count);
         }catch (ArithmeticException e){
             System.out.println("Don't divide by 0");
+        }
+        
+        Arrays.sort(c1.getItens());
+        for (Clothing item : c1.getItens()) {
+            System.out.println("Item output: "+ item);
+
         }
         
     }
